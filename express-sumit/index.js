@@ -1,15 +1,20 @@
-const express = require('express');
+/** @format */
 
+const express = require("express");
+const router = express.Router();
 const app = express();
 
-app.get('/',(req,res) => {
-    res.send('this is home port')
-})
+app.use(router);
+app.use(express.static(`${__dirname}/public/`));
 
-app.get('/sample',(req,res) => {
-    res.send('this is sample port')
-})
+router.get("/about", (req, res) => {
+  res.send("this is home port");
+});
 
-app.listen(3000,()=>{
-    console.log('server running at 3000 port')
-})
+router.post("/", (req, res) => {
+  res.send("this is sample port");
+});
+
+app.listen(3000, () => {
+  console.log("server running at 3000 port");
+});
