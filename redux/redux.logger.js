@@ -74,7 +74,7 @@ const todosReducer = (state = initialTodosState, action) => {
 
 //async action creator
 const fetchData = () => {
-  
+
   return (dispatch) => {
     dispatch(getTodosRequest());
 
@@ -98,4 +98,4 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-store.dispatch(fetchData()
+store.dispatch(fetchData());
